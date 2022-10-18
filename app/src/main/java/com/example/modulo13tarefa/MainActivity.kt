@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Log.d("LifeCycle","onCreate") //Fazendo um Log
-
         val binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
@@ -45,11 +43,6 @@ class MainActivity : AppCompatActivity() {
         drawer = binding.root
         navDrawer = binding.navView
         bottomNav = binding.bottomNav
-//        editText = binding.editTextTextPersonName
-
-//        savedInstanceState?.getString("editTextValue")?.let{
-//            editText.setText(it)
-//        }
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -77,21 +70,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-
-//        outState.putString("editTextValue",editText.text.toString())
+        //Armazenar aqui as informacoes
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }

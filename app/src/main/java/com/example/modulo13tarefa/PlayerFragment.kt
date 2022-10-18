@@ -43,4 +43,9 @@ class PlayerFragment : Fragment() {
             else -> item.onNavDestinationSelected(findNavController())
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        //Armazenar aqui as informacoes
+    }
 }

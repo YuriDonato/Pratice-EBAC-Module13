@@ -17,11 +17,11 @@ import com.example.modulo13tarefa.HomeFragmentDirections
 import com.example.modulo13tarefa.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-    lateinit var editText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,11 +30,6 @@ class HomeFragment : Fragment() {
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
         val startGameButton = binding.startActivityButton
-
-//        if(savedInstanceState?.containsKey("editTextValue") == true){
-//            val value = savedInstanceState.getString("editTextValue")
-//            editText.setText(value)
-//        }
 
         startGameButton.setOnClickListener{
             val action = HomeFragmentDirections.actionHomeFragmentToGameNav()
@@ -48,6 +43,6 @@ class HomeFragment : Fragment() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        //outState.putString("editTextValue",editText.text.toString())
+        //Armazenar aqui as informacoes
     }
 }
